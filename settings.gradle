@@ -1,0 +1,2 @@
+rootProject.name='Lets Go User App'
+include ':app', ':slideMenuLibrary', ':facebooklibrary', ':stripe', ':googleDirectionLibrary'

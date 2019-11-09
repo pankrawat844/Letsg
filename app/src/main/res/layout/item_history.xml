@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="result"
+            type="come.texi.driver.model.Location" />
+    </data>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:id="@+id/timer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/timer"
+        android:layout_marginTop="@dimen/margin_20"
+        app:layout_constraintTop_toBottomOf="@+id/cardview"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginLeft="@dimen/margin_40"
+        android:padding="@dimen/margin_10"
+        />
+    <TextView
+        android:id="@+id/history_1a"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/timer"
+        app:layout_constraintTop_toTopOf="@+id/timer"
+        android:textSize="@dimen/font_17"
+
+        android:fontFamily="@font/roboto_bold"
+        android:text="@{result.address}"/>
+    <TextView
+        android:id="@+id/history_1b"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_regular"
+        app:layout_constraintStart_toEndOf="@+id/timer"
+        app:layout_constraintTop_toBottomOf="@+id/history_1a"
+        android:textSize="@dimen/margin_15"
+        android:text="@{result.fulladdress}"
+        />
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_20"
+        app:layout_constraintTop_toBottomOf="@+id/history_1b"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

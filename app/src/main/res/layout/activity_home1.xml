@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <fragment
+        android:id="@+id/map"
+        class="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/dropnpickup_linear" />
+
+    <LinearLayout
+        android:id="@+id/layout_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_50"
+            android:background="@null"
+            android:layout_marginTop="@dimen/height_30">
+
+            <RelativeLayout
+                android:id="@+id/layout_slidemenu"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+               >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/margin_15"
+                    android:src="@drawable/menu1" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/txt_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="@dimen/font_18" />
+
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/dropnpickup_linear"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_275"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/cell_background"
+        android:orientation="vertical"
+        android:padding="@dimen/margin_15">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:textColor="@color/black"
+                android:textSize="@dimen/height_20"
+                android:fontFamily="@font/roboto_regular"
+                android:text="Welcome, Rohit"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/height_20"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/user_name">
+
+                <LinearLayout
+                    android:id="@+id/des_layout"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/height_40"
+                    android:background="@drawable/destination_bg"
+                    android:orientation="horizontal"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintWidth_percent="0.6">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:src="@drawable/search1" />
+
+                    <TextView
+                        android:id="@+id/destination"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="5dp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="Enter Destination"
+                        android:textColor="@color/black"
+                        >
+
+                    </TextView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/height_40"
+                    android:layout_marginLeft="@dimen/margin_10"
+                    android:background="@drawable/destination_bg"
+                    android:orientation="horizontal"
+                    app:layout_constraintLeft_toRightOf="@+id/des_layout"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintWidth_percent="0.3">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:src="@drawable/calender1" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="Schedule"
+                        android:layout_marginLeft="5dp"
+                        android:textColor="@color/black" />
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="bottom">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <EditText
+                    android:id="@+id/edt_pickup_location"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/margin_15"
+                    android:layout_marginRight="@dimen/margin_5"
+                    android:layout_toLeftOf="@+id/img_pickup_close"
+                    android:background="@android:color/transparent"
+                    android:hint="@string/enter_pickup_location"
+                    android:imeOptions="actionDone"
+                    android:singleLine="true"
+                    android:textColor="@color/grey_drk"
+                    android:textColorHint="@color/grey_drk"
+                    android:textSize="@dimen/font_16" />
+
+                <ImageView
+                    android:id="@+id/img_pickup_close"
+                    android:layout_width="@dimen/height_20"
+                    android:layout_height="@dimen/height_20"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/margin_5"
+                    android:src="@drawable/clear_btn"
+                    android:visibility="gone" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true">
+
+
+                <EditText
+                    android:id="@+id/edt_drop_location"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/margin_15"
+                    android:layout_marginRight="@dimen/margin_5"
+                    android:layout_toLeftOf="@+id/img_drop_close"
+                    android:background="@android:color/transparent"
+                    android:hint="@string/enter_drop_location"
+                    android:imeOptions="actionDone"
+                    android:singleLine="true"
+                    android:textColor="@color/grey_drk"
+                    android:textColorHint="@color/grey_drk"
+                    android:textSize="@dimen/font_16" />
+
+                <ImageView
+                    android:id="@+id/img_drop_close"
+                    android:layout_width="@dimen/height_20"
+                    android:layout_height="@dimen/height_20"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/margin_5"
+                    android:src="@drawable/clear_btn"
+                    android:visibility="gone" />
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_15">
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_15"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/img_drop_comment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:src="@drawable/comment_icon" />
+
+            <EditText
+                android:id="@+id/edt_write_comment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/margin_15"
+                android:layout_toRightOf="@+id/img_drop_comment"
+                android:background="@android:color/transparent"
+                android:hint="@string/write_comment"
+                android:imeOptions="actionDone"
+                android:textColor="@color/grey_drk"
+                android:textColorHint="@color/grey_drk"
+                android:textSize="@dimen/font_16" />
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout_footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:id="@+id/layout_now"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/book_now_btn">
+
+            <TextView
+                android:id="@+id/txt_now"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/now"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_14" />
+
+        </RelativeLayout>
+        <!--<ImageView-->
+        <!--android:id="@+id/img_now"-->
+        <!--android:layout_width="200dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:src="@drawable/book_now_btn"-->
+        <!--android:scaleType="fitXY"/>-->
+
+        <RelativeLayout
+            android:id="@+id/layout_reservation"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/reservation_btn">
+
+            <TextView
+                android:id="@+id/txt_reservation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/reservation"
+                android:textColor="@color/reservation_color"
+                android:textSize="@dimen/font_14" />
+
+        </RelativeLayout>
+
+        <!--<ImageView-->
+        <!--android:id="@+id/img_reservation"-->
+        <!--android:layout_width="200dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:src="@drawable/reservation_btn"-->
+        <!--android:scaleType="fitXY"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:layout_alignParentEnd="true"-->
+        <!--/>-->
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout_pickup_drag_location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/gray_light"
+        android:padding="@dimen/margin_15"
+        android:visibility="gone">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycle_pickup_location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/filter_popup_border" />
+
+        <LinearLayout
+            android:id="@+id/layout_no_result"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/filter_popup_border"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="@dimen/height_100"
+                android:layout_height="@dimen/height_100"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/margin_20"
+                android:src="@drawable/location_search" />
+
+            <TextView
+                android:id="@+id/txt_not_found"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/margin_10"
+                android:text="No Results"
+                android:textColor="@color/heading_truck_type"
+                android:textSize="@dimen/font_18" />
+
+            <TextView
+                android:id="@+id/no_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/margin_10"
+                android:text="No locations matching your search."
+                android:textColor="@color/label_gray_light"
+                android:textSize="@dimen/font_16" />
+
+            <TextView
+                android:id="@+id/please_check"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Please check and retry."
+                android:textColor="@color/label_gray_light"
+                android:textSize="@dimen/font_16" />
+
+
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>
