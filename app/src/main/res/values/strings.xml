@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Lezco Cabs User</string>
+    <string name="app_name">Lezco User</string>
 
     <!--Login String-->
     <string name="user_name">User Name</string>
@@ -20,7 +20,6 @@
     <string name="enter_drop_location">Enter Drop location</string>
     <string name="write_comment">Write a comment</string>
     <string name="home_alert_message">Enter Pickup Locaton</string>
-
     <!--Forgot Password String-->
     <string name="forgot_password_screen">Forgot Password</string>
 
@@ -136,11 +135,10 @@
 
     <!--Api Key -->
     <string name="facebook_app_id">1245761062135111</string>
-    <string name="google_maps_key">AIzaSyB-6kVfd4zCQpNWGCrclWxzglzSLzxu-wQ</string>
-    <string name="google_server_key">AIzaSyCGXH2hb0dzSQ7gttkAxZKul1E7GjWhU1o</string>
-
+    <string name="google_maps_key">AIzaSyCMcY71QFYu7HkmG4BXtTbW9zbkCUcXLs4</string>
+    <string name="google_server_key" translatable="false">AIzaSyCGXH2hb0dzSQ7gttkAxZKul1E7GjWhU1o</string>
     <string name="paypal_client_id">AYqm_vX5LIbsdhuZBgkVBHAJ9YR6yA2_3N81R9wZGkjBZPMHDu91uo47fwL7779Bxly6li5vQWfrO0fy</string>
-    <!--sarju-facilitator@techintegrity.in-->
+    <string name="sms_gateway" translatable="false">176qqvy2sa14l8996jas28pq1n53kru50j</string>
 
     <string-array name="currency_array">
         <item>Currency (optional)</item>
@@ -248,5 +246,16 @@
     <string name="invalid_login">Invalid Login</string>
 
     <string name="gcm_defaultSenderId">946334651844</string>
-
+    <array name="payment">
+        <item>Cash</item>
+        <item>Online</item>
+    </array>
+    <array name="rating">
+          <item>0 Star</item>
+        <item>1 Star</item>
+        <item>2 Star</item>
+        <item>3 Star</item>
+        <item>4 Star</item>
+        <item>5 Star</item>
+    </array>
 </resources>

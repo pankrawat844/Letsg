@@ -4,7 +4,7 @@
     <data>
         <variable
             name="result"
-            type="come.texi.driver.model.Location" />
+            type="come.user.lezco.model.Location" />
     </data>
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"

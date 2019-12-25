@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:isScrollContainer="true"
+    app:layout_constraintVertical_chainStyle="spread_inside">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <fragment
+        android:id="@+id/map_fragment"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:src="@drawable/ic_leftarrow"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/map_fragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@drawable/card_round"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/map_fragment">
+
+            <TextView
+                android:id="@+id/distance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="6 min away"
+                android:textColor="@android:color/black"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/estimate_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_regular"
+                android:text="Arrive by 8:40 pm"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="@+id/distance"
+                app:layout_constraintTop_toBottomOf="@+id/distance" />
+
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:id="@+id/driver_img"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/driver_img"
+                app:layout_constraintStart_toStartOf="@+id/estimate_time"
+                app:layout_constraintTop_toBottomOf="@+id/estimate_time" />
+
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:id="@+id/car_img"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="@+id/driver_img"
+                app:layout_constraintStart_toStartOf="@+id/driver_img"
+                app:layout_constraintTop_toBottomOf="@+id/driver_img" />
+
+            <TextView
+                android:id="@+id/driver_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="Rohit Sharma"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/driver_img"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/driver_img"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <RatingBar
+                android:id="@+id/driver_rating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_regular"
+                android:text="4.8 "
+                style="?android:attr/ratingBarStyleSmall"
+                app:layout_constraintEnd_toEndOf="@+id/driver_name"
+                app:layout_constraintTop_toBottomOf="@+id/driver_name" />
+
+            <TextView
+                android:id="@+id/car_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_regular"
+                android:text="HR45W4560"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/car_img"
+                app:layout_constraintEnd_toEndOf="@+id/driver_rating"
+                app:layout_constraintTop_toTopOf="@+id/car_img"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/car_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_regular"
+                android:text="SUV"
+                app:layout_constraintEnd_toEndOf="@+id/car_number"
+                app:layout_constraintTop_toBottomOf="@+id/car_number" />
+
+            <EditText
+                android:id="@+id/pickup_note"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/round_edit_text"
+                android:ems="10"
+                android:fontFamily="@font/roboto_regular"
+                android:hint="Any Pickup notes?"
+                android:inputType="textPersonName"
+                android:padding="8dp"
+                android:textSize="12sp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toStartOf="@+id/floatingActionButton5"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/car_img"
+                app:layout_constraintTop_toBottomOf="@+id/car_img"
+                app:layout_constraintWidth_percent="0.5" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/floatingActionButton5"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:backgroundTint="@android:color/holo_red_light"
+                android:clickable="true"
+                android:visibility="gone"
+                app:cardCornerRadius="30dp"
+                app:layout_constraintBottom_toBottomOf="@+id/pickup_note"
+                app:layout_constraintEnd_toStartOf="@+id/floatingActionButton6"
+                app:layout_constraintTop_toTopOf="@+id/pickup_note">
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center_horizontal|center"
+                    android:src="@drawable/ic_phone_call" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/floatingActionButton6"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:backgroundTint="@color/colorAccent"
+                android:clickable="true"
+                android:src="@drawable/ic_more"
+                android:visibility="gone"
+                app:cardCornerRadius="30dp"
+                app:layout_constraintBottom_toBottomOf="@+id/floatingActionButton5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/floatingActionButton5"
+                app:layout_constraintVertical_bias="0.0">
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_more" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/floatingActionButton8"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="24dp"
+                android:backgroundTint="@color/colorPrimary"
+                app:cardCornerRadius="30dp"
+
+                app:layout_constraintStart_toStartOf="@+id/pickup_note"
+                app:layout_constraintTop_toBottomOf="@+id/pickup_note">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="14dp"
+                    android:layout_gravity="center_horizontal|center"
+                    android:src="@drawable/ic_placeholder"/>
+            </androidx.cardview.widget.CardView>
+
+
+            <TextView
+                android:id="@+id/edit_address"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:fontFamily="@font/roboto_regular"
+                android:gravity="center_vertical"
+                android:text=""
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/floatingActionButton8"
+                app:layout_constraintEnd_toStartOf="@+id/edt_address_btn"
+                app:layout_constraintStart_toEndOf="@+id/floatingActionButton8"
+                app:layout_constraintTop_toTopOf="@+id/floatingActionButton8" />
+
+            <Button
+                android:id="@+id/edt_address_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/round_btn_text"
+                android:backgroundTint="@color/colorPrimary"
+                android:fontFamily="@font/roboto_regular"
+                android:paddingLeft="@dimen/margin_15"
+                android:paddingRight="@dimen/margin_15"
+                android:text="Edit Address"
+                android:textColor="@color/white"
+                android:textSize="@dimen/font_13"
+                app:layout_constraintBottom_toBottomOf="@+id/edit_address"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/edit_address" />
+
+
+            <RelativeLayout
+                android:id="@+id/name_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="@dimen/margin_20"
+                android:layout_marginRight="16dp"
+                app:layout_constraintStart_toStartOf="@+id/floatingActionButton8"
+                app:layout_constraintTop_toBottomOf="@+id/edit_address">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:theme="@style/FormTextInputLayoutTheme"
+                    app:hintTextAppearance="@style/FormTextInputLayou">
+
+                    <EditText
+                        android:id="@+id/edit_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/user_icon"
+                        android:drawableLeft="@drawable/user_icon"
+                        android:drawablePadding="@dimen/margin_10"
+                        android:hint="@string/name"
+                        android:inputType="text"
+                        android:singleLine="true"
+                        android:textColor="@color/grey"
+                        android:textColorHint="@color/dark_grey"
+                        android:textSize="@dimen/font_16" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/phone_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                app:layout_constraintStart_toStartOf="@+id/name_layout"
+                app:layout_constraintTop_toBottomOf="@+id/name_layout">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:theme="@style/FormTextInputLayoutTheme"
+                    app:hintTextAppearance="@style/FormTextInputLayou">
+
+                    <EditText
+                        android:id="@+id/edit_mobile"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/mobile_icon"
+                        android:drawableLeft="@drawable/mobile_icon"
+                        android:drawablePadding="@dimen/margin_10"
+                        android:hint="Mobile( without country code)"
+                        android:inputType="number"
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/grey_drk"
+                        android:textSize="@dimen/font_16" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </RelativeLayout>
+
+
+            <Spinner
+                android:id="@+id/spinner_payment"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="@dimen/margin_10"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/round_edit_text"
+                android:entries="@array/payment"
+                android:padding="@dimen/margin_10"
+                android:spinnerMode="dropdown"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/phone_layout" />
+
+            <Button
+                android:id="@+id/payment_btn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="32dp"
+                android:background="@drawable/round_btn_text"
+                android:backgroundTint="@color/colorPrimary"
+                android:text="Confirm Booking"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/edt_address_btn"
+                app:layout_constraintStart_toStartOf="@+id/floatingActionButton8"
+                app:layout_constraintTop_toBottomOf="@+id/spinner_payment" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
+<include
+    layout="@layout/bottomsheet_otp"
+    android:visibility="gone"
+   />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
